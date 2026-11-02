@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="hobbies-page">
+
+    <!-- Decorative corner -->
+    <div class="hobbies-decoration top-left"></div>
+    <div class="hobbies-decoration bottom-left"></div>
+
+    <!-- Star menu -->
+    <div class="star-menu">
+        <button id="starButton" class="star-button" aria-label="Open navigation">
+            ★
+        </button>
+
+        <nav id="starLinks" class="star-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="interest.html">Hobbies</a>
+            <a href="contact.html">Contacts</a>
+        </nav>
+    </div>
+
+    <!-- Heading and photo -->
+    <header class="hobbies-header">
+        <h1>Hobbies</h1>
+
+        <img
+            src="hobbies-photo.jpg"
+            alt="A photo representing my hobbies"
+            class="hobbies-photo interest-photo"
+        >
+    </header>
+    
+    <!-- Hobby cards -->
+    <main class="hobbies-cards">
+
+        <div class="hobby-card">
+            <span class="hobby-star">✦</span>
+            <p>I enjoy running and staying active.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span class="hobby-star">✦</span>
+            <p>I enjoy spending quality time with my loved ones.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span class="hobby-star">✦</span>
+            <p>I love exploring new experiences and challenging myself.</p>
+        </div>
+
+        <div class="hobby-card">
+            <span class="hobby-star">✦</span>
+            <p>I love creating meaningful memories with the people who matter to me.</p>
+        </div>
+
+    </main>
+
+<div id="photoPopup" class="photo-popup">
+    <span id="closePopup">&times;</span>
+    <img id="popupImage">
+</div>
+
+    <script src="script.js"></script>
+    
+</div>
+</body>
+</html>

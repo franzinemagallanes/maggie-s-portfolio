@@ -1,0 +1,735 @@
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #777273;
+    font-family: Arial, sans-serif;
+    color: black;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================
+   STAR MENU
+========================= */
+
+.star-menu {
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.star-button {
+    background: transparent;
+    border: none;
+    font-size: 75px;
+    color: black;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.star-button:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.star-label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* STAR LINKS */
+
+.star-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+
+    position: absolute;
+    top: 105px;
+    right: 0;
+
+    width: 180px;
+    padding: 15px;
+
+    background-color: #e4e0e1;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.star-links.show {
+    display: flex;
+}
+
+.star-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.star-links a:hover {
+    background-color: white;
+    transform: translateX(-5px);
+}
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+.home-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #777273;
+    overflow: hidden;
+}
+
+.home-content {
+    position: absolute;
+    top: 35%;
+    left: 53%;
+    width: 43%;
+    z-index: 2;
+}
+
+.portfolio-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* TYPING TEXT */
+
+.typing-title {
+    font-size: clamp(40px, 5vw, 75px);
+    font-weight: bold;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* SNOOPY PHOTOS */
+
+.snoopy {
+    position: absolute;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.snoopy-one {
+    width: 190px;
+    left: 12%;
+    top: 15%;
+}
+
+.snoopy-two {
+    width: 150px;
+    left: 35%;
+    top: 35%;
+}
+
+.snoopy-three {
+    width: 170px;
+    left: 12%;
+    bottom: 10%;
+}
+
+/* WAVES */
+
+.wave {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 15px solid white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.wave-top {
+    top: -150px;
+    left: -100px;
+}
+
+.wave-bottom {
+    bottom: -160px;
+    right: 10%;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+.about-page {
+    position: relative;
+    min-height: 100vh;
+    background-color: #777273;
+    overflow: hidden;
+}
+
+.about-title {
+    font-size: 50px;
+    margin: 20px 0 15px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.about-photo {
+    width: 238px;
+    height: 395px;
+    object-fit: cover;
+    flex-shrink: 0;
+
+    border-radius: 0 15px 15px 0;
+}
+
+.about-text {
+    max-width: 420px;
+}
+
+.about-text h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.about-text p {
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+/* SNOOPY DECORATION */
+
+.about-snoopy {
+    position: absolute;
+    width: 170px;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .home-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        padding: 200px 25px 30px;
+    }
+
+    .typing-title {
+        font-size: 35px;
+    }
+
+    .snoopy-one {
+        width: 120px;
+        left: 5%;
+        top: 100px;
+    }
+
+    .snoopy-two {
+        width: 100px;
+        left: 40%;
+        top: 150px;
+    }
+
+    .snoopy-three {
+        width: 110px;
+        left: 5%;
+        bottom: 30px;
+    }
+
+    .about-title {
+        font-size: 38px;
+        margin-top: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .about-photo {
+        width: 70%;
+        height: 300px;
+    }
+
+    .about-text {
+        padding: 0 20px 30px;
+    }
+
+    .about-text h2 {
+        font-size: 21px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+    }
+
+    .about-snoopy {
+        width: 100px;
+    }
+}
+
+/* =========================
+   HOBBIES PAGE
+========================= */
+
+.hobbies-page {
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #858585;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* Background grid */
+.hobbies-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(100, 100, 100, 0.25) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(100, 100, 100, 0.25) 2px, transparent 2px);
+    background-size: 75px 75px;
+    z-index: 0;
+}
+
+/* Decorative corner shapes */
+.hobbies-decoration {
+    position: absolute;
+    width: 210px;
+    height: 115px;
+    border: 14px solid #f5f5f5;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hobbies-decoration.top-left {
+    top: -60px;
+    left: -35px;
+    transform: rotate(-15deg);
+}
+
+.hobbies-decoration.bottom-left {
+    bottom: -75px;
+    left: -165px;
+    width: 230px;
+    height: 180px;
+}
+
+/* Heading and photo */
+.hobbies-header {
+    position: relative;
+    z-index: 2;
+    min-height: 290px;
+}
+
+.hobbies-header h1 {
+    position: absolute;
+    top: 125px;
+    left: 15%;
+    margin: 0;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.hobbies-photo {
+    position: absolute;
+    top: 85px;
+    right: 0;
+    width: 36%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 110px 0 0 110px;
+}
+
+/* Hobby cards */
+.hobbies-cards {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 83%;
+    margin: 30px auto 60px;
+}
+
+.hobby-card {
+    box-sizing: border-box;
+    min-height: 174px;
+    padding: 24px 28px;
+    background: #fff;
+    border: 2px solid #171717;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hobby-star {
+    color: #c5d0da;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 26px;
+}
+
+.hobby-card p {
+    margin: 0;
+    color: #657565;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+/* Keep the page responsive */
+@media (max-width: 900px) {
+    .hobbies-header h1 {
+        left: 8%;
+        font-size: 48px;
+    }
+
+    .hobbies-photo {
+        width: 42%;
+        height: 160px;
+    }
+
+    .hobbies-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 84%;
+    }
+}
+
+@media (max-width: 550px) {
+    .hobbies-header {
+        min-height: 330px;
+    }
+
+    .hobbies-header h1 {
+        top: 105px;
+        left: 7%;
+        font-size: 40px;
+    }
+
+    .hobbies-photo {
+        top: 175px;
+        width: 75%;
+        height: 130px;
+    }
+
+    .hobbies-cards {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+}
+
+#welcomeBtn {
+    background-color: #191919;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+#welcomeBtn:hover {
+    background-color: #e8a5c8;
+    color: black;
+}
+
+#welcomeMessage {
+    color: #e8a5c8;
+    font-size: 18px;
+    margin-top: 15px;
+}
+.photo-popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-popup img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+}
+
+#closePopup {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   CONTACTS PAGE
+========================= */
+
+.contact-page {
+    margin: 0;
+    min-height: 100vh;
+    background: #858585;
+    font-family: Arial, sans-serif;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* Grid background */
+.contact-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(70,70,70,0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(70,70,70,0.2) 2px, transparent 2px);
+    background-size: 75px 75px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Main layout */
+.contact-container {
+    position: relative;
+    z-index: 1;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 8%;
+    gap: 40px;
+}
+
+/* Heading */
+.contact-left {
+    flex: 1;
+}
+
+.contact-left h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    margin-bottom: 20px;
+}
+
+.contact-left p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Envelope area */
+.envelope-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clickable envelope */
+.envelope-button {
+    width: min(420px, 100%);
+    height: 300px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+    padding: 0;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Envelope back */
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #f5eee2;
+    border: 1px solid #d5cbbb;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    z-index: 1;
+}
+
+/* Contact details inside envelope */
+.contact-details {
+    position: absolute;
+    inset: 10px;
+    background: white;
+    padding: 20px;
+    text-align: left;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+
+    /* Hidden inside envelope when closed */
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.7s ease, opacity 0.5s ease;
+}
+
+.contact-details h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.contact-details p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Envelope front */
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #e8dfd1;
+    clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+    z-index: 3;
+}
+
+/* Envelope flap */
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #fff8ed;
+    clip-path: polygon(0 0, 100% 0, 50% 58%);
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 0.7s ease;
+    z-index: 4;
+}
+
+/* Open state */
+/* Open envelope */
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+/* Show all contact details */
+.envelope.open .contact-details {
+    transform: translateY(-100px);
+    opacity: 1;
+    z-index: 5;
+}
+/* Decorative circles */
+.contact-decoration {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 12px solid white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-decoration.top-left {
+    top: -100px;
+    left: -100px;
+}
+
+.contact-decoration.top-right {
+    top: -100px;
+    right: -100px;
+}
+
+.contact-decoration.bottom-left {
+    bottom: -100px;
+    left: -100px;
+}
+
+.contact-decoration.bottom-right {
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+
+    .contact-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 35px;
+    }
+
+    .contact-left h1 {
+        font-size: 42px;
+    }
+
+    .contact-left p {
+        font-size: 20px;
+    }
+
+    .envelope-button {
+        width: min(340px, 90vw);
+        height: 230px;
+    }
+
+    .contact-details {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .contact-details h2 {
+        font-size: 20px;
+    }
+
+    .contact-details p {
+        font-size: 14px;
+    }
+
+}
